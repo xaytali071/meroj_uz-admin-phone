@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "44997023832",
+    "project_id": "me-roj-uz",
+    "storage_bucket": "me-roj-uz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44997023832:android:5b804ab6c6696ea4ff522d",
+        "android_client_info": {
+          "package_name": "com.example.meroj_uz_admin_phone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZJJrObySPwjV2bupO_PyDI3wqa66H2-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44997023832:android:e19f70e926996444ff522d",
+        "android_client_info": {
+          "package_name": "uz.meroj_uz_admin_phone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZJJrObySPwjV2bupO_PyDI3wqa66H2-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
