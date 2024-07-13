@@ -57,6 +57,7 @@ dependencies:
   http: ^1.2.1
   just_audio: ^0.9.32
   youtube_explode_dart: ^2.2.1
+  simple_barcode_scanner: ^0.1.1
 
 
   #firebase

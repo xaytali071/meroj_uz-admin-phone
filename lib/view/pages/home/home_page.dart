@@ -9,6 +9,7 @@ import 'package:meroj_uz_admin_phone/view/components/current_prayer_times.dart';
 import 'package:meroj_uz_admin_phone/view/components/hadith_widget.dart';
 import 'package:meroj_uz_admin_phone/view/components/notification_widget.dart';
 import 'package:meroj_uz_admin_phone/view/components/style.dart';
+import 'package:meroj_uz_admin_phone/view/pages/bar_code.dart';
 import 'package:meroj_uz_admin_phone/view/pages/home/prayer/bomdod.dart';
 import 'package:meroj_uz_admin_phone/view/pages/home/qaza_pages.dart';
 import 'package:meroj_uz_admin_phone/view/pages/home/qibla.dart';
@@ -203,6 +204,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                 ],
               ),
             ),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (_)=>BarCodeExeple()));
+            }, child: Text("BarCode")),
             20.verticalSpace,
           ],
         ),

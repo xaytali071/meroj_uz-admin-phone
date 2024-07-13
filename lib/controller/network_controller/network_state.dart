@@ -4,6 +4,7 @@ import '../../infostructure/model/banner_model.dart';
 import '../../infostructure/model/maruza_model.dart';
 import '../../infostructure/model/hadis_model.dart';
 import '../../infostructure/model/user_model.dart';
+import '../../infostructure/product_model.dart';
 part 'network_state.freezed.dart';
 
 @freezed
@@ -19,5 +20,6 @@ class NetworkState with _$NetworkState {
         @Default([]) List<BannerModel> listOfBanner,
         @Default(false) bool playAudio,
         @Default("") String audio,
+        @Default([]) List<ProductModel> listOfProduct,
       }) =_NetworkState;
 }

@@ -26,6 +26,7 @@ mixin _$NetworkState {
   List<BannerModel> get listOfBanner => throw _privateConstructorUsedError;
   bool get playAudio => throw _privateConstructorUsedError;
   String get audio => throw _privateConstructorUsedError;
+  List<ProductModel> get listOfProduct => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NetworkStateCopyWith<NetworkState> get copyWith =>
@@ -48,7 +49,8 @@ abstract class $NetworkStateCopyWith<$Res> {
       List<UserModel> listOfUsers,
       List<BannerModel> listOfBanner,
       bool playAudio,
-      String audio});
+      String audio,
+      List<ProductModel> listOfProduct});
 }
 
 /// @nodoc
@@ -74,6 +76,7 @@ class _$NetworkStateCopyWithImpl<$Res, $Val extends NetworkState>
     Object? listOfBanner = null,
     Object? playAudio = null,
     Object? audio = null,
+    Object? listOfProduct = null,
   }) {
     return _then(_value.copyWith(
       listOfHadith: null == listOfHadith
@@ -116,6 +119,10 @@ class _$NetworkStateCopyWithImpl<$Res, $Val extends NetworkState>
           ? _value.audio
           : audio // ignore: cast_nullable_to_non_nullable
               as String,
+      listOfProduct: null == listOfProduct
+          ? _value.listOfProduct
+          : listOfProduct // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>,
     ) as $Val);
   }
 }
@@ -138,7 +145,8 @@ abstract class _$$NetworkStateImplCopyWith<$Res>
       List<UserModel> listOfUsers,
       List<BannerModel> listOfBanner,
       bool playAudio,
-      String audio});
+      String audio,
+      List<ProductModel> listOfProduct});
 }
 
 /// @nodoc
@@ -162,6 +170,7 @@ class __$$NetworkStateImplCopyWithImpl<$Res>
     Object? listOfBanner = null,
     Object? playAudio = null,
     Object? audio = null,
+    Object? listOfProduct = null,
   }) {
     return _then(_$NetworkStateImpl(
       listOfHadith: null == listOfHadith
@@ -204,6 +213,10 @@ class __$$NetworkStateImplCopyWithImpl<$Res>
           ? _value.audio
           : audio // ignore: cast_nullable_to_non_nullable
               as String,
+      listOfProduct: null == listOfProduct
+          ? _value._listOfProduct
+          : listOfProduct // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>,
     ));
   }
 }
@@ -221,12 +234,14 @@ class _$NetworkStateImpl implements _NetworkState {
       final List<UserModel> listOfUsers = const [],
       final List<BannerModel> listOfBanner = const [],
       this.playAudio = false,
-      this.audio = ""})
+      this.audio = "",
+      final List<ProductModel> listOfProduct = const []})
       : _listOfHadith = listOfHadith,
         _playList = playList,
         _listOfAudio = listOfAudio,
         _listOfUsers = listOfUsers,
-        _listOfBanner = listOfBanner;
+        _listOfBanner = listOfBanner,
+        _listOfProduct = listOfProduct;
 
   final List<HadithModel> _listOfHadith;
   @override
@@ -288,10 +303,18 @@ class _$NetworkStateImpl implements _NetworkState {
   @override
   @JsonKey()
   final String audio;
+  final List<ProductModel> _listOfProduct;
+  @override
+  @JsonKey()
+  List<ProductModel> get listOfProduct {
+    if (_listOfProduct is EqualUnmodifiableListView) return _listOfProduct;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listOfProduct);
+  }
 
   @override
   String toString() {
-    return 'NetworkState(listOfHadith: $listOfHadith, isLoading: $isLoading, imagePath: $imagePath, imageUrl: $imageUrl, playList: $playList, listOfAudio: $listOfAudio, listOfUsers: $listOfUsers, listOfBanner: $listOfBanner, playAudio: $playAudio, audio: $audio)';
+    return 'NetworkState(listOfHadith: $listOfHadith, isLoading: $isLoading, imagePath: $imagePath, imageUrl: $imageUrl, playList: $playList, listOfAudio: $listOfAudio, listOfUsers: $listOfUsers, listOfBanner: $listOfBanner, playAudio: $playAudio, audio: $audio, listOfProduct: $listOfProduct)';
   }
 
   @override
@@ -316,7 +339,9 @@ class _$NetworkStateImpl implements _NetworkState {
                 .equals(other._listOfBanner, _listOfBanner) &&
             (identical(other.playAudio, playAudio) ||
                 other.playAudio == playAudio) &&
-            (identical(other.audio, audio) || other.audio == audio));
+            (identical(other.audio, audio) || other.audio == audio) &&
+            const DeepCollectionEquality()
+                .equals(other._listOfProduct, _listOfProduct));
   }
 
   @override
@@ -331,7 +356,8 @@ class _$NetworkStateImpl implements _NetworkState {
       const DeepCollectionEquality().hash(_listOfUsers),
       const DeepCollectionEquality().hash(_listOfBanner),
       playAudio,
-      audio);
+      audio,
+      const DeepCollectionEquality().hash(_listOfProduct));
 
   @JsonKey(ignore: true)
   @override
@@ -351,7 +377,8 @@ abstract class _NetworkState implements NetworkState {
       final List<UserModel> listOfUsers,
       final List<BannerModel> listOfBanner,
       final bool playAudio,
-      final String audio}) = _$NetworkStateImpl;
+      final String audio,
+      final List<ProductModel> listOfProduct}) = _$NetworkStateImpl;
 
   @override
   List<HadithModel> get listOfHadith;
@@ -373,6 +400,8 @@ abstract class _NetworkState implements NetworkState {
   bool get playAudio;
   @override
   String get audio;
+  @override
+  List<ProductModel> get listOfProduct;
   @override
   @JsonKey(ignore: true)
   _$$NetworkStateImplCopyWith<_$NetworkStateImpl> get copyWith =>

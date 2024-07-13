@@ -10,6 +10,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:meroj_uz_admin_phone/controller/network_controller/network_state.dart';
 import 'package:meroj_uz_admin_phone/infostructure/model/audio_model.dart';
 import 'package:meroj_uz_admin_phone/infostructure/model/maruza_model.dart';
+import 'package:meroj_uz_admin_phone/infostructure/product_model.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 import '../../infostructure/model/banner_model.dart';
 import '../../infostructure/model/hadis_model.dart';
@@ -358,5 +359,24 @@ class NetworkNotifire extends StateNotifier<NetworkState> {
   updatePlaylistName({required String docId,required String name}){
     firestore.collection("maruzalar").doc(docId).update({"playlistName":name});
   }
+  List<ProductModel> list = [];
 
+  searchBook(String code) async {
+    if (code.isEmpty) {
+      state=(state.copyWith(listOfProduct: []));
+    } else {
+      var res = await firestore
+          .collection("product")
+          .orderBy("code")
+          .startAt([code]).endAt(["$code\uf8ff"]).get();
+
+      //state.listOfProduct.clear();
+      for (var element in res.docs) {
+        list.add(ProductModel.fromJson(data: element.data()));
+      }
+      print(list);
+
+      state=(state.copyWith(listOfProduct: list));
+    }
+  }
 }

@@ -19,9 +19,9 @@ class _AppWidgetState extends State<AppWidget> {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return  MaterialApp(
+          return  const MaterialApp(
             debugShowCheckedModeBanner: false,
-          home: const BottomBar(),
+          home: BottomBar(),
           );
         }
     );
